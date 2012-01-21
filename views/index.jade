@@ -1,3 +1,44 @@
-div(id='map_canvas',class='big_maps')
+#container
+  #background
+    img(src="/images/layout.gif", border=0)
+  #header
+    form#form
+      #locationbar
+        input(type='text')
+      #searchbar
+        input(type='text')
+      input(type='submit')
 
+  #filterbar
+    form
+      input(type='checkbox', name='filter', value='Event')
+      input(type='checkbox', name='filter', value='Marketplace') Marketplace 
+      input(type='checkbox', name='filter', value='Services') Services 
+      input(type='checkbox', name='filter', value='Jobs') Jobs 
 
+  #list
+    if (deals)
+      each deal in deals
+        if (deal.source)
+          #listitem
+            a(href='/deals/#{deal.id}')= deal.source
+
+  #mapspace
+    #map
+      #map_canvas.big_maps(style='width:100%; height:100%')
+
+  #details
+    #focusedImg.prevImg
+      img(src="http://bestuff.com/images/images_of_stuff/64x64crop/teddy-bear-124099.jpg?1203884621")
+
+    #focusedName
+      if (deal!={})
+        h4= deal.source
+
+    #focusedCost
+      if (deal!={})
+        h4= deal.cost || 'Cost N/A'
+
+    #focusedDetails
+      if (deal!={})
+        a(href=deal.link) Orinal Link

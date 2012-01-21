@@ -1,14 +1,8 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
 
-var app = module.exports = express.createServer();
-
-// Configuration
+var app = module.exports = express.createServer()
+  , ConnectCouchDB = require('connect-couchdb')(express)
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -30,6 +24,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/deals/:id', routes.deals);
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

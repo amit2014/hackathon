@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -7,7 +7,125 @@ a {
   color: #00B7FF;
 }
 
+h4{
+    line-height:25px;
+}
+
 #map_canvas{
   height: 500px;
   width: 500px;
+}
+
+
+#container {
+}
+
+#header{
+        position:absolute;
+        top:10px;
+}
+
+        #locationbar {
+                    position:absolute;
+                    left:245px;
+                    float:left;
+        }
+        #searchbar {
+                    position:absolute;
+                    left:440px;
+                    float:left;
+                    margin-left:50px;
+        }
+        #makenew {
+                    position:absolute;
+                    left:640px;
+                    float:left;
+        }
+        
+#filterbar {
+        position:absolute;
+        top:55px;
+        left:5px;
+        
+        width:215px;
+        height:90px;
+        
+        padding:5px;
+}
+#list {
+        position:absolute;
+        top:160px;
+        left:5px;
+        
+        width:215px;
+        height:365px;
+        
+        padding:5px;
+
+        overflow-y:scroll;
+        overflow-x:hidden;
+}
+#listitem{
+    text-overflow:ellipsis;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #EEE;
+}
+#map {
+        position:absolute;
+        top:55px;
+        left:240px;
+        
+        width:480px;
+        height:290px;
+        
+        padding:5px;
+}
+#details {
+        clear:both;
+        position:absolute;
+        top:360px;
+        left:240px;
+        
+        width:480px;
+        height:165px;
+        
+        padding:5px;
+}
+#createnew {
+        position:absolute;
+        top:20px;
+        left:100px;
+}
+#footer{
+        position:absolute;
+        top:540px;
+        left:10px;
+}
+
+#prevImg {
+        
+}
+#focusedImg{
+        float:left;
+        position:relative;
+}
+#focusedName{
+        float:left;
+        position:absolute;
+        left:95px;
+        width:320px;
+}
+#focusedCost{
+        float: right;
+        position:relative;
+}
+#focusedDetails{
+    position:absolute;
+    margin-top:90px;
+    width:450px;
+}
+
+input[type=submit]{
+    position:absolute;
+    margin-left:735px;
 }
