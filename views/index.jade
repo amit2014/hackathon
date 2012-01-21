@@ -1,27 +1,38 @@
-#container
+#home
   #background
     img(src="/images/layout.gif", border=0)
   #header
     form#form
       #locationbar
-        input(type='text')
+        input(type='text', id='loc_search', placeHolder="Enter address or postal code")
       #searchbar
-        input(type='text')
-      input(type='submit')
+        input(type='text', id='txt_search', placeHolder="What are you looking for?")
+      #makenew
+        input(type='submit', id='home_submit')
+        a(href='/new')
+          img(src="/images/newpost.gif",width="90",height="28",border="0")
+
 
   #filterbar
-    form
-      input(type='checkbox', name='filter', value='Event')
-      input(type='checkbox', name='filter', value='Marketplace') Marketplace 
-      input(type='checkbox', name='filter', value='Services') Services 
-      input(type='checkbox', name='filter', value='Jobs') Jobs 
+    form.
+        <input onclick="functionA(0)" type="checkbox" name="filter" value="Events" /> <img src="/images/events.gif" width="14" height="14" border="0" /> Events <br />
+        <input onclick="functionA(1)" type="checkbox" name="filter" value="Marketplace" /> <img src="/images/marketplace.gif" width="14" height="14" border="0" /> Marketplace <br />
+        <input onclick="functionA(2)" type="checkbox" name="filter" value="Services" /> <img src="/images/services.gif" width="14" height="14" border="0" /> Services <br />
+        <input onclick="functionA(3)" type="checkbox" name="filter" value="Housing" /> <img src="/images/housing.gif" width="14" height="14" border="0" /> Housing <br />
+        <input onclick="functionA(4)" type="checkbox" name="filter" value="Jobs" /> <img src="/images/jobs.gif" width="14" height="14" border="0" /> Jobs
 
   #list
-    if (deals)
-      each deal in deals
-        if (deal.source)
-          #listitem
-            a(href='/deals/#{deal.id}')= deal.source
+    #mcs3_container
+      .customScrollBox
+        div.container
+          .content
+            if (deals)
+              each deal in deals
+                if (deal.source)
+                  #listitem
+                    a(href='/deals/#{deal.id}')= deal.source
+          div.dragger_container
+            div.dragger
 
   #mapspace
     #map
@@ -41,4 +52,9 @@
 
     #focusedDetails
       if (deal!={})
-        a(href=deal.link) Orinal Link
+        <p><b>Details: </b>asdf as kasjfk kjkaj kjkasd asd a kj;kjs kj kjl;kj asdkjf asd sd lkj kjlkj efgf sfdg dsf s sdfg sdfg sd
+        hello ;lkj;lkj as;dkj ;lkjsf askd asd akj twod ksajd ;kjasd </p>
+        <p><b>Location: </b>200 University Avenue, Waterloo, ON</p>
+
+        a(href=deal.link) Direct Link.
+

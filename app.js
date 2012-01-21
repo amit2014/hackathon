@@ -24,6 +24,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/new', routes.new_page);
 app.get('/deals/:id', routes.deals);
 
 app.listen(3000);

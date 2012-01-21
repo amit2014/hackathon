@@ -13,7 +13,8 @@ var Deal = Model.define("Deal", {
   //"geolat" : Number,
   //"geolng" : Number,
 
-  "link" : String
+  "link" : String,
+  "desc" : String
 });
 
 Model.load()

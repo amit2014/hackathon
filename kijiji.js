@@ -37,6 +37,7 @@ var methods = {
                    tr.attribs.class!='first_row'){
 
                   deal.price = tr.children.first().text;
+                  //console.log(deal);
                 }
 
                 //deals.push(deal);
@@ -44,20 +45,40 @@ var methods = {
 
                 //this.emit(deal);
               });
+
+            });
+          });
+
+          nodeio.scrape(function(){
+            nodeio.scrape(function(){
+
+              this.getHtml(deal.link, function(err, $){
+
+                var desc = ''
+                $('div#ad-desc span div').each(function(div){
+
+                  desc += div.text;
+                  
+                  console.log(desc);
+
+                  desc = ''
+                });
+              });
             });
           });
 
         }
-          var m_deal = models.Deal.create({
-            price:deal.price,
-            source:deal.title,
-            link:deal.link
-          });
 
-          m_deal.save(function(err, saved_deal){
-            console.log(saved_deal);
+          //var m_deal = models.Deal.create({
+            //price:deal.price,
+            //source:deal.title,
+            //link:deal.link
+          //});
+
+          //m_deal.save(function(err, saved_deal){
+            //console.log(saved_deal);
             
-          });
+          //});
 
       });
 

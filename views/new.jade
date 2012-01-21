@@ -1,0 +1,26 @@
+#home
+  #background
+    img(src="/images/new.gif", border=0)
+
+  #form
+    form(name="myForm", action="").
+        Name: <input type="text" name="name"> <br /><br /> 
+
+        <div id="typeText">Type:</div>
+        <div id="radios">
+            <input type="radio" name="type" value="events" id="events"/> <img src="/images/events.gif" width="14" height="14" border="0" />Events<br />
+            <input type="radio" name="type" value="marketplace" id="marketplace"/> <img src="/images/marketplace.gif" width="14" height="14" border="0" />Marketplace<br />
+            <input type="radio" name="type" value="services" id="services"/> <img src="/images/services.gif" width="14" height="14" border="0" />Services<br />
+            <input type="radio" name="type" value="housing" id="housing"/> <img src="/images/housing.gif" width="14" height="14" border="0" />Housing<br />
+            <input type="radio" name="type" value="jobs" id="jobs"/> <img src="/images/jobs.gif" width="14" height="14" border="0" />Jobs<br /><br />
+        </div>
+
+        Description: <textarea rows="5" cols="2"></textarea><br /><br />
+
+        Location: <input type="text" name="location" id="location"/><br /><br />
+        Cost: <input type="text" name="cost" id="cost"/><br /><br />
+        URL: <input type="text" name="link" id="link"/><br /><br />
+
+        <input onclick="functionB()" type="button" value="Cancel"/>
+        <input type="submit" value="Submit" />
+
